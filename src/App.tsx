@@ -4,6 +4,7 @@ import { Example } from './views/Example';
 import { Integratinganexistingform } from './views/Integrating-an-existing-form';
 import { IntegratingwithUIlibraries } from './views/Integrating-with-UI-libraries';
 import { UsingComponentAPI } from './views/Using-Component-API';
+import { UsingHooksAPI } from './views/Using-Hooks-API';
 const List = [
   {
     label: 'Example',
@@ -34,6 +35,12 @@ const List = [
     from: 'https://react-hook-form.com/get-started#IntegratingControlledInputs',
     to: '/views/Using-Component-API',
     Component: UsingComponentAPI,
+  },
+  {
+    label: 'Using Hooks API',
+    from: 'https://react-hook-form.com/get-started#IntegratingControlledInputs',
+    to: '/views/Using-Hooks-API',
+    Component: UsingHooksAPI,
   },
 ];
 function App() {

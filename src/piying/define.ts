@@ -23,6 +23,7 @@ import { ReactDatePicker } from './react-datepicker';
 import { NumberFormat } from './number-format';
 import { Downshift } from './downshift';
 import { PiyingGroup2 } from './group/group';
+import { ControlStatusWrapper } from './wrapper/control-status';
 
 export const fieldConfig = {
   types: {
@@ -55,6 +56,9 @@ export const fieldConfig = {
     },
     validator: {
       type: ValidatorWrapper,
+    },
+    controlStatus: {
+      type: ControlStatusWrapper,
     },
   },
 } as PiViewConfig;
