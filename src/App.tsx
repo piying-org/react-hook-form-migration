@@ -4,6 +4,7 @@ import { Applyvalidation } from './views/Apply-validation';
 import { Example } from './views/Example';
 import { Integratinganexistingform } from './views/Integrating-an-existing-form';
 import { IntegratingwithUIlibraries } from './views/Integrating-with-UI-libraries';
+import { UsingComponentAPI } from './views/Using-Component-API';
 const List = [
   {
     label: 'Example',
@@ -28,6 +29,12 @@ const List = [
     from: 'https://react-hook-form.com/get-started#IntegratingwithUIlibraries',
     to: '/views/Integrating-with-UI-libraries',
     Component: IntegratingwithUIlibraries,
+  },
+  {
+    label: 'Using Component API',
+    from: 'https://react-hook-form.com/get-started#IntegratingControlledInputs',
+    to: '/views/Using-Component-API',
+    Component: UsingComponentAPI,
   },
 ];
 function App() {
