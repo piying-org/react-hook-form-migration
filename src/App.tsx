@@ -4,7 +4,9 @@ import { Example } from './views/Example';
 import { Handleerrors } from './views/Handle-errors';
 import { Integratinganexistingform } from './views/Integrating-an-existing-form';
 import { IntegratingwithUIlibraries } from './views/Integrating-with-UI-libraries';
+import { Resolver } from './views/Resolver';
 import { SchemaValidation } from './views/Schema-Validation';
+import { SubmitHandler } from './views/SubmitHandler';
 import { UsingComponentAPI } from './views/Using-Component-API';
 import { UsingHooksAPI } from './views/Using-Hooks-API';
 const List = [
@@ -55,6 +57,18 @@ const List = [
     from: 'https://react-hook-form.com/get-started#SchemaValidation',
     to: '/views/Schema-Validation',
     Component: SchemaValidation,
+  },
+  {
+    label: 'Resolver',
+    from: 'https://react-hook-form.com/ts#Resolver',
+    to: '/views/Resolver',
+    Component: Resolver,
+  },
+  {
+    label: 'SubmitHandler',
+    from: 'https://react-hook-form.com/ts#SubmitHandler',
+    to: '/views/SubmitHandler',
+    Component: SubmitHandler,
   },
 ];
 function App() {
