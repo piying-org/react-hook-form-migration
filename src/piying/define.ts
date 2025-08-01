@@ -8,6 +8,12 @@ import { LabelWrapper } from './wrapper/label-wrapper';
 import { ValidatorWrapper } from './wrapper/validator-wrapper';
 import { ArrayRwGroup } from './group/array-rw';
 import { MultiCheckbox } from './multi-checkbox';
+import { FormHelp } from './form-help';
+import { PiSelect } from './select';
+import { ReactSelect } from './react-select';
+import { MuiTextField } from './mui/input-text';
+import { MuiCheckbox } from './mui/checkbox';
+import { AntdInput } from './antd/input-text';
 
 export const fieldConfig = {
   types: {
@@ -18,6 +24,12 @@ export const fieldConfig = {
     fieldset: { type: FieldsetGroup },
     'multi-checkbox': { type: MultiCheckbox },
     'array-rw': { type: ArrayRwGroup },
+    formHelper: { type: FormHelp },
+    select: { type: PiSelect },
+    'react-select': { type: ReactSelect },
+    'mui-input': { type: MuiTextField },
+    'mui-checkbox': { type: MuiCheckbox },
+    'antd-input': { type: AntdInput },
   },
   wrappers: {
     label: {

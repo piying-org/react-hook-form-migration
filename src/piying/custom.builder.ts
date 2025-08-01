@@ -20,7 +20,7 @@ export class CustomNgBuilder extends ReactFormBuilder {
     );
     const inputs$$ = linkedSignal(() => {
       let value = getSignalValue(inputs);
-      if (rawConfig.type === 'picklist') {
+      if (rawConfig.type === 'picklist' || rawConfig.type === 'select' || rawConfig.type === 'react-select') {
         const options = options$$();
         if (options && !value.options) {
           value = { ...value, options };
