@@ -1,4 +1,4 @@
-import { PiyingGroup, type PiViewConfig } from '@piying/view-react';
+import { type PiViewConfig } from '@piying/view-react';
 import { FieldsetGroup } from './group/fieldset';
 import { InputCheckbox } from './input-checkbox';
 import { InputNumber } from './input-number';

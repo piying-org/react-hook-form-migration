@@ -1,5 +1,5 @@
 import type { ControlValueAccessor } from '@piying/view-core';
-import { CVA, useControlValueAccessor, useSelectModel } from '@piying/view-react';
+import { CVA, useControlValueAccessor } from '@piying/view-react';
 import { useImperativeHandle, useMemo } from 'react';
 import { DefaultOptionConvert, transformOptions, type OptionConvert } from './util/options';
 import Select from 'react-select';

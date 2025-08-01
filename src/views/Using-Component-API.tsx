@@ -1,6 +1,5 @@
 import * as v from 'valibot';
 import {
-  patchWrappers,
   setComponent,
   patchInputs,
   setWrappers,
@@ -288,7 +287,7 @@ const List2 = [
   { value: 20, label: 'Twenty' },
   { value: 30, label: 'Thirty' },
 ] as const;
-let ReactSelectList = [
+const ReactSelectList = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' },
@@ -415,7 +414,7 @@ export function UsingComponentAPI() {
   function modelChange(event: any) {
     console.log(event);
   }
-  let initValue = {
+  const initValue = {
     Native: '',
     TextField: '',
     Select: 10,

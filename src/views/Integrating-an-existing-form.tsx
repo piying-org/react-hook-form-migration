@@ -1,5 +1,5 @@
 import * as v from 'valibot';
-import { patchWrappers, setComponent, patchInputs, setWrappers, patchProps, NFCSchema } from '@piying/view-core';
+import { setComponent, setWrappers, patchProps, NFCSchema } from '@piying/view-core';
 import { fieldConfig } from '../piying/define';
 import { CustomNgBuilder } from '../piying/custom.builder';
 import { PiyingView } from '@piying/view-react';
@@ -27,7 +27,7 @@ export function Integratinganexistingform() {
   function modelChange(event: any) {
     console.log(event);
   }
-  let initValue = {};
+  const initValue = {};
   return (
     <>
       <PiyingView schema={schema} options={options} modelChange={modelChange} model={initValue}></PiyingView>

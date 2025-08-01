@@ -1,7 +1,6 @@
 import type { ControlValueAccessor } from '@piying/view-core';
 import { CVA, PI_VIEW_FIELD_TOKEN, useControlValueAccessor, useSignalToRef } from '@piying/view-react';
-import { useContext, useImperativeHandle, useMemo } from 'react';
-import Checkbox from '@mui/material/Checkbox';
+import { useContext, useImperativeHandle } from 'react';
 import Switch from '@mui/material/Switch';
 
 interface PiInputOptions {

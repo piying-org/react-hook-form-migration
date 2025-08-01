@@ -1,15 +1,10 @@
-import { valueChange, type ControlValueAccessor } from '@piying/view-core';
+import { type ControlValueAccessor } from '@piying/view-core';
 import { CVA, PI_VIEW_FIELD_TOKEN, useControlValueAccessor, useSignalToRef } from '@piying/view-react';
 import { useContext, useImperativeHandle, useMemo } from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 
 import { DefaultOptionConvert, transformOptions, type OptionConvert } from '../util/options';
 
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 interface PiInputOptions {
   [CVA]: React.RefObject<ControlValueAccessor>;

@@ -1,8 +1,6 @@
 import type { ControlValueAccessor } from '@piying/view-core';
 import { CVA, PI_VIEW_FIELD_TOKEN, useControlValueAccessor, useSignalToRef } from '@piying/view-react';
-import { useContext, useImperativeHandle, useMemo } from 'react';
-import TextField from '@mui/material/TextField';
-import { errorString } from '../util/error-string';
+import { useContext, useImperativeHandle } from 'react';
 import Slider from '@mui/material/Slider';
 
 interface PiInputOptions {
