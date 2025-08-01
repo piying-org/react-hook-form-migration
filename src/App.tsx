@@ -4,6 +4,7 @@ import { Example } from './views/Example';
 import { Handleerrors } from './views/Handle-errors';
 import { Integratinganexistingform } from './views/Integrating-an-existing-form';
 import { IntegratingwithUIlibraries } from './views/Integrating-with-UI-libraries';
+import { SchemaValidation } from './views/Schema-Validation';
 import { UsingComponentAPI } from './views/Using-Component-API';
 import { UsingHooksAPI } from './views/Using-Hooks-API';
 const List = [
@@ -48,6 +49,12 @@ const List = [
     from: 'https://react-hook-form.com/get-started#Handleerrors',
     to: '/views/Handle-errors',
     Component: Handleerrors,
+  },
+  {
+    label: 'Schema Validation',
+    from: 'https://react-hook-form.com/get-started#SchemaValidation',
+    to: '/views/Schema-Validation',
+    Component: SchemaValidation,
   },
 ];
 function App() {
