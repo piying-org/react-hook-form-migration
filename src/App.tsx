@@ -1,6 +1,7 @@
 import './App.css';
 import { Applyvalidation } from './views/Apply-validation';
 import { Example } from './views/Example';
+import { Handleerrors } from './views/Handle-errors';
 import { Integratinganexistingform } from './views/Integrating-an-existing-form';
 import { IntegratingwithUIlibraries } from './views/Integrating-with-UI-libraries';
 import { UsingComponentAPI } from './views/Using-Component-API';
@@ -41,6 +42,12 @@ const List = [
     from: 'https://react-hook-form.com/get-started#IntegratingControlledInputs',
     to: '/views/Using-Hooks-API',
     Component: UsingHooksAPI,
+  },
+  {
+    label: 'Handle errors',
+    from: 'https://react-hook-form.com/get-started#Handleerrors',
+    to: '/views/Handle-errors',
+    Component: Handleerrors,
   },
 ];
 function App() {
