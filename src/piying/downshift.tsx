@@ -24,7 +24,7 @@ export function Downshift(props: PiInputOptions) {
           cvaa.valueChange(event);
         }}
       >
-        {({ getInputProps, getItemProps, getLabelProps, getMenuProps, isOpen, inputValue }) => (
+        {({ getInputProps, getItemProps, getMenuProps, isOpen, inputValue }) => (
           <div>
             <input {...getInputProps()} className="input" {...attributes} />
             <ul {...getMenuProps()}>

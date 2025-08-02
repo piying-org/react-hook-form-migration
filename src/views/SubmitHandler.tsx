@@ -34,7 +34,7 @@ const schema = v.pipe(
       }),
       formConfig({
         transfomer: {
-          toModel(value, control) {
+          toModel(value,) {
             return value ? 'yes' : 'no';
           },
         },

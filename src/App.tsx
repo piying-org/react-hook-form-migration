@@ -13,7 +13,7 @@ const List = [
   {
     label: 'Example',
     from: 'https://react-hook-form.com/get-started',
-    to: '/views/Basic-Example',
+    to: '/views/Example',
     Component: Example,
   },
   {
@@ -84,7 +84,7 @@ function App() {
                   Formik Page
                 </a>
                 <a
-                  href={'https://github.com/piying-org/formik-migration/tree/main/src' + item.to + '.tsx'}
+                  href={'https://github.com/piying-org/react-hook-form-migration/tree/main/src' + item.to + '.tsx'}
                   className="link-secondary btn"
                   target="_blank"
                 >

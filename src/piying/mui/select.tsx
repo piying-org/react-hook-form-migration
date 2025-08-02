@@ -19,9 +19,7 @@ export function MuiSelect(props: PiInputOptions) {
   const resolvedOptions = useMemo(() => {
     return transformOptions(props.options ?? [], { ...DefaultOptionConvert, ...props.optionConvert });
   }, [props.optionConvert, props.options]);
-  const props2 = useSignalToRef(field, (field) => {
-    return field.props();
-  });
+
   return (
     <>
       <Select {...attributes} value={cvaa.value??''}  onChange={(event) => cvaa.valueChange(event.target.value)}>
