@@ -81,7 +81,7 @@ function App() {
               <div className="flex gap-4 *:flex-1 items-center *:first:flex-0">
                 <label className="label">{item.label}</label>
                 <a href={item.from} className="link-primary btn" target="_blank">
-                  Formik Page
+                  react-hook-form Page
                 </a>
                 <a
                   href={'https://github.com/piying-org/react-hook-form-migration/tree/main/src' + item.to + '.tsx'}
