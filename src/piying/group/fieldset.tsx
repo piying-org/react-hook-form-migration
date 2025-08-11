@@ -1,6 +1,6 @@
 import { PI_VIEW_FIELD_TOKEN, useSignalToRef, PiyingFieldTemplate } from '@piying/view-react';
 import { useContext } from 'react';
-export function FieldsetGroup(props: {}) {
+export function FieldsetGroup(_: {}) {
   const field = useContext(PI_VIEW_FIELD_TOKEN);
   const props2 = useSignalToRef(field, (field) => field?.props());
   const children = useSignalToRef(field, (field) => field?.children!())!;
