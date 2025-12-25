@@ -1,16 +1,21 @@
 import * as v from 'valibot';
-import { setComponent, setWrappers, patchProps, NFCSchema } from '@piying/view-core';
+import { setComponent, actions, NFCSchema } from '@piying/view-core';
 import { fieldConfig } from '../piying/define';
 import { CustomNgBuilder } from '../piying/custom.builder';
 import { PiyingView } from '@piying/view-react';
 const schema = v.pipe(
   v.object({
-    example: v.pipe(v.optional(v.string()), v.title('Example'), setWrappers(['label', 'validator']), patchProps({ titlePosition: 'top' })),
+    example: v.pipe(
+      v.optional(v.string()),
+      v.title('Example'),
+      actions.wrappers.set(['label', 'validator']),
+      actions.props.patch({ titlePosition: 'top' })
+    ),
     exampleRequired: v.pipe(
       v.string(),
       v.title('ExampleRequired'),
-      setWrappers(['label', 'validator']),
-      patchProps({ titlePosition: 'top' }),
+      actions.wrappers.set(['label', 'validator']),
+      actions.props.patch({ titlePosition: 'top' }),
       v.maxLength(10),
       v.minLength(1)
     ),

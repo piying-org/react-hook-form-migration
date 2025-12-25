@@ -1,15 +1,5 @@
 import * as v from 'valibot';
-import {
-  setComponent,
-  patchInputs,
-  setWrappers,
-  patchProps,
-  NFCSchema,
-  componentClass,
-  asControl,
-  patchAttributes,
-  asVirtualGroup,
-} from '@piying/view-core';
+import { setComponent, NFCSchema, asControl, actions, asVirtualGroup } from '@piying/view-core';
 import { fieldConfig } from '../piying/define';
 import { CustomNgBuilder } from '../piying/custom.builder';
 import { PiyingView } from '@piying/view-react';
@@ -297,52 +287,57 @@ const schema = v.pipe(
     v.intersect([
       v.pipe(
         v.object({
-          Native: v.pipe(v.string(), v.title('Native Input:'), setWrappers(['label']), patchProps({ titlePosition: 'top' })),
+          Native: v.pipe(
+            v.string(),
+            v.title('Native Input:'),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' })
+          ),
           Checkbox: v.pipe(
             v.boolean(),
             v.title('MUI Checkbox'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
             setComponent('mui-checkbox')
           ),
           RadioGroup: v.pipe(
             v.picklist(List.map((item) => item.value)),
             v.title('Radio Group'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
-            patchInputs({ options: List }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
+            actions.inputs.patch({ options: List }),
             setComponent('mui-radio')
           ),
           TextField: v.pipe(
             v.string(),
             v.title('MUI TextField'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
             setComponent('mui-input')
           ),
           Select: v.pipe(
             v.picklist(List2.map((item) => item.value)),
             v.title('MUI Select'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
-            patchInputs({ options: List2 }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
+            actions.inputs.patch({ options: List2 }),
             setComponent('mui-select')
           ),
           switch: v.pipe(
             v.boolean(),
             v.title('MUI Switch'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
             setComponent('mui-switch')
           ),
           MUI_Slider: v.pipe(
             v.optional(v.tuple([v.number(), v.number()]), [0, 10]),
             asControl(),
             v.title('MUI Slider'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
             setComponent('mui-slider'),
-            patchInputs({
+            actions.inputs.patch({
               max: 10,
               step: 1,
               defaultValue: [0, 10],
@@ -351,7 +346,7 @@ const schema = v.pipe(
           country: v.pipe(
             v.custom<{ code: string; label: string; phone: string }>(Boolean),
             v.title('MUI autocomplete'),
-            patchInputs({
+            actions.inputs.patch({
               options: countries,
             }),
             setComponent('mui-autocomplete')
@@ -359,43 +354,44 @@ const schema = v.pipe(
           ReactSelect: v.pipe(
             v.picklist(ReactSelectList.map((item) => item.value)),
             v.title('React Select'),
-            patchInputs({
+            actions.inputs.patch({
               options: ReactSelectList,
             }),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
             setComponent('mui-select')
           ),
           ReactDatepicker: v.pipe(
             v.date(),
             v.title('React Datepicker'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
             setComponent('react-datepicker'),
-            patchAttributes({
+            actions.attributes.patch({
               placeholderText: 'Select date',
             })
           ),
           numberFormat: v.pipe(
             v.number(),
             v.title('NumberFormat'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
             setComponent('number-format')
           ),
           downShift: v.pipe(
             v.string(),
             v.title('Downshift'),
-            setWrappers(['label']),
-            patchProps({ titlePosition: 'top' }),
-            patchInputs({ options: items }),
+            actions.wrappers.set(['label']),
+            actions.props.patch({ titlePosition: 'top' }),
+            actions.inputs.patch({ options: items }),
             setComponent('downshift'),
-            patchAttributes({
+            actions.attributes.patch({
               placeholder: 'Enter a fruit',
             })
           ),
         }),
-        componentClass('grid grid-cols-2 gap-4')
+        // todo class.component
+        actions.attributes.set({ className: 'grid grid-cols-2 gap-4' })
       ),
       v.object({
         __formHelper: v.pipe(NFCSchema, setComponent('formHelper')),

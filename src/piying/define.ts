@@ -24,13 +24,14 @@ import { NumberFormat } from './number-format';
 import { Downshift } from './downshift';
 import { PiyingGroup2 } from './group/group';
 import { ControlStatusWrapper } from './wrapper/control-status';
+import { actions } from '@piying/view-core';
 
 export const fieldConfig = {
   types: {
-    string: { type: InputText, wrappers: ['label'] },
-    number: { type: InputNumber, wrappers: ['label'] },
+    string: { type: InputText, actions: [actions.wrappers.set(['label'])] },
+    number: { type: InputNumber, actions: [actions.wrappers.set(['label'])] },
     radio: { type: InputRadio },
-    boolean: { type: InputCheckbox, wrappers: ['label'] },
+    boolean: { type: InputCheckbox, actions: [actions.wrappers.set(['label'])] },
     fieldset: { type: FieldsetGroup },
     'multi-checkbox': { type: MultiCheckbox },
     'array-rw': { type: ArrayRwGroup },
@@ -47,7 +48,7 @@ export const fieldConfig = {
     'antd-input': { type: AntdInput },
     'react-datepicker': { type: ReactDatePicker },
     'number-format': { type: NumberFormat },
-    'downshift': { type: Downshift },
+    downshift: { type: Downshift },
     object: { type: PiyingGroup2 },
   },
   wrappers: {

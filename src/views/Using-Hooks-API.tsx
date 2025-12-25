@@ -1,11 +1,11 @@
 import * as v from 'valibot';
-import { setComponent, setWrappers, NFCSchema } from '@piying/view-core';
+import { setComponent, actions, NFCSchema } from '@piying/view-core';
 import { fieldConfig } from '../piying/define';
 import { CustomNgBuilder } from '../piying/custom.builder';
 import { PiyingView } from '@piying/view-react';
 const schema = v.pipe(
   v.object({
-    firstName: v.pipe(v.string(), setWrappers(['controlStatus']), v.minLength(1)),
+    firstName: v.pipe(v.string(), actions.wrappers.set(['controlStatus']), v.minLength(1)),
 
     __formHelper: v.pipe(NFCSchema, setComponent('formHelper')),
   }),

@@ -1,11 +1,11 @@
 import * as v from 'valibot';
-import { setComponent, setWrappers, NFCSchema } from '@piying/view-core';
+import { setComponent, actions, NFCSchema } from '@piying/view-core';
 import { fieldConfig } from '../piying/define';
 import { CustomNgBuilder } from '../piying/custom.builder';
 import { PiyingView } from '@piying/view-react';
 const schema = v.pipe(
   v.object({
-    multipleErrorInput: v.pipe(v.string(), v.regex(/\d+/, 'This input is number only.'), setWrappers(['validator']), v.minLength(11)),
+    multipleErrorInput: v.pipe(v.string(), v.regex(/\d+/, 'This input is number only.'), actions.wrappers.set(['validator']), v.minLength(11)),
 
     __formHelper: v.pipe(NFCSchema, setComponent('formHelper')),
   }),

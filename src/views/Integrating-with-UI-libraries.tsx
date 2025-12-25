@@ -1,5 +1,5 @@
 import * as v from 'valibot';
-import { setComponent, patchInputs, setWrappers, patchProps, NFCSchema } from '@piying/view-core';
+import { setComponent, actions, NFCSchema } from '@piying/view-core';
 import { fieldConfig } from '../piying/define';
 import { CustomNgBuilder } from '../piying/custom.builder';
 import { PiyingView } from '@piying/view-react';
@@ -14,18 +14,18 @@ const schema = v.pipe(
     lastName: v.pipe(
       v.optional(v.string()),
       v.title('Laste Name'),
-      setWrappers(['label', 'validator']),
-      patchProps({ titlePosition: 'top' }),
+      actions.wrappers.set(['label', 'validator']),
+      actions.props.patch({ titlePosition: 'top' }),
       setComponent('antd-input')
     ),
     iceCreamType: v.pipe(
       v.optional(v.picklist(List.map((item) => item.value))),
       v.title('Ice Cream Preference'),
-      setWrappers(['label', 'validator']),
-      patchProps({
+      actions.wrappers.set(['label', 'validator']),
+      actions.props.patch({
         titlePosition: 'top',
       }),
-      patchInputs({
+      actions.inputs.patch({
         optiosn: List,
       }),
       setComponent('react-select')
@@ -33,8 +33,8 @@ const schema = v.pipe(
     Checkbox: v.pipe(
       v.optional(v.boolean()),
       v.title('Checkbox'),
-      setWrappers(['label']),
-      patchProps({ titlePosition: 'right' }),
+      actions.wrappers.set(['label']),
+      actions.props.patch({ titlePosition: 'right' }),
       setComponent('mui-checkbox')
     ),
 
